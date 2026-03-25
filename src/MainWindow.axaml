@@ -6,7 +6,9 @@
         x:Class="test_sourcegenerator.MainWindow"
         Title="AXSG ResourceDictionary repro">
   <StackPanel Margin="20" Spacing="10">
-    <TextBlock Text="Loading avares://test-sourcegenerator/Resources/TestDictionary.axaml via AvaloniaXamlLoader.Load(uri):" />
-    <TextBlock x:Name="StatusText" TextWrapping="Wrap" />
+    <TextBlock Text="Before fix — AvaloniaXamlLoader.Load(uri):" FontWeight="Bold" />
+    <TextBlock x:Name="UriLoadText" TextWrapping="Wrap" />
+    <TextBlock Text="After fix — new TestDictionary():" FontWeight="Bold" />
+    <TextBlock x:Name="DirectLoadText" TextWrapping="Wrap" />
   </StackPanel>
 </Window>
