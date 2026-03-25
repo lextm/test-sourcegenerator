@@ -2,10 +2,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:test_sourcegenerator.ViewModels"
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
         x:Class="test_sourcegenerator.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
         Width="800"
         Height="450"
         Title="AXSG DataGrid Repro">
@@ -14,12 +16,12 @@
                    Margin="12"
                    Text="Unqualified DataGrid in default Avalonia namespace" />
         <DataGrid Margin="12"
-                  AutoGenerateColumns="False"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False">
+              ItemsSource="{Binding Items}"
+              AutoGenerateColumns="False"
+              IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"
-                                    Binding="{Binding Name}" />
+                                    Binding="{ReflectionBinding Name}" />
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>
