@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:test_sourcegenerator.ViewModels"
+        xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -15,14 +16,14 @@
         <TextBlock DockPanel.Dock="Top"
                    Margin="12"
                    Text="Unqualified DataGrid in default Avalonia namespace" />
-        <DataGrid Margin="12"
+        <dg:DataGrid Margin="12"
               ItemsSource="{Binding Items}"
               AutoGenerateColumns="False"
               IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name"
+            <dg:DataGrid.Columns>
+                <dg:DataGridTextColumn Header="Name"
                                     Binding="{ReflectionBinding Name}" />
-            </DataGrid.Columns>
-        </DataGrid>
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
     </DockPanel>
 </Window>
