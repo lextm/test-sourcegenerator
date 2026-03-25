@@ -2,8 +2,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
         x:Class="test_sourcegenerator.MainWindow"
-        Title="test_sourcegenerator">
-    Welcome to Avalonia!
+        Width="800"
+        Height="450"
+        Title="AXSG DataGrid Repro">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="12"
+                   Text="Unqualified DataGrid in default Avalonia namespace" />
+        <DataGrid Margin="12"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name"
+                                    Binding="{Binding Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>
