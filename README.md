@@ -64,5 +64,9 @@ dotnet run --project src
 
 > Note that this repo shows that in the csharp-expressions branch, and just some simple syntax. [A full specification is being developed by Microsoft](https://github.com/dotnet/maui/blob/main/docs/specs/XamlCSharpExpressions.md) for MAUI and AXSG will align with that spec as it evolves.
 
+## Features: Hot Reload, Live Preview, Visual Designer, and MCP
+
+Once you finish the initial onboarding steps, your project is ready to work with [the new AXSG extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=wieslawsoltes.axsg-language-server), so get started with more fun!
+
 ## Common troubleshooting
 - Things might be missing or broken: see [CONTRIBUTE.md](CONTRIBUTE.md) for local-analyzer troubleshooting and fixes, and contribute detailed reports back to AXSG developers to help them improve the experience.
