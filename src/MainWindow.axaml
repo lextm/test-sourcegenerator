@@ -1,9 +1,29 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:test_sourcegenerator"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="test_sourcegenerator.MainWindow"
+        x:DataType="vm:MainViewModel"
         Title="test_sourcegenerator">
-    Welcome to Avalonia!
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <StackPanel Margin="16" Spacing="8">
+        <TextBlock FontSize="18" Text="C# Expression samples" />
+
+        <TextBlock Text="Type something below and see C# expressions evaluate in real time:" />
+
+        <TextBox x:Name="InputBox" Width="400" Text="{Binding InputText, Mode=TwoWay}" />
+
+        <TextBlock Text="Uppercase (C# expression):" />
+        <TextBlock Text="{= InputText != null ? InputText.ToUpper() : '(empty)'}" />
+
+        <TextBlock Text="Length (C# expression):" />
+        <TextBlock Text="{= (InputText ?? '').Length }" />
+
+        <Button Content="Action enabled when input present" IsEnabled="{= !string.IsNullOrWhiteSpace(InputText) }" />
+    </StackPanel>
 </Window>
