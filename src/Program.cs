@@ -1,6 +1,6 @@
 ﻿using Avalonia;
 using System;
-using XamlToCSharpGenerator.Runtime;
+//using XamlToCSharpGenerator.Runtime;
 
 namespace test_sourcegenerator;
 
@@ -18,6 +18,6 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .UseAvaloniaSourceGeneratedXaml()
+            //.UseAvaloniaSourceGeneratedXaml()
             .LogToTrace();
 }
